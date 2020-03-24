@@ -74,18 +74,6 @@ public class IntoText {
                 result.append(' ');
             }
             switch (temp.range) {
-                case BILLIONS:
-                    if (temp.d == '1' || temp.u == '0') result.append("миллиардов");
-                    else if (temp.u > '4') result.append("миллиардов");
-                    else if (temp.u > '1') result.append("миллиарда");
-                    else result.append("миллиард");
-                    break;
-                case MILLIONS:
-                    if (temp.d == '1' || temp.u == '0') result.append("миллионов");
-                    else if (temp.u > '4') result.append("миллионов");
-                    else if (temp.u > '1') result.append("миллиона");
-                    else result.append("миллион");
-                    break;
                 case THOUSANDS:
                     if (temp.d == '1' || temp.u == '0') result.append("тысяч");
                     else if (temp.u > '4') result.append("тысяч");
@@ -101,7 +89,6 @@ public class IntoText {
         result.setCharAt(0, first);
         return result.toString();
     }
-
     private static String getHundreds(char dig) {
         switch (dig) {
             case '1':
@@ -126,7 +113,6 @@ public class IntoText {
                 return null;
         }
     }
-
     private static String getDecades(char dig) {
         switch (dig) {
             case '1':
